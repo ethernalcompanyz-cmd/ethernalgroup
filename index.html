@@ -1,51 +1,716 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#050505">
-<meta name="description" content="ETHERNAL CIRCLE — United by loyalty. Defined by individuality.">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#050505"><meta name="description" content="ETHERNAL CIRCLE — standalone private community archive with local-only features.">
 <title>ETHERNAL CIRCLE — Private Community</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
-:root{--bg:#050505;--panel:#0b0b0b;--card:#101010;--text:#f5f5f5;--muted:#929292;--line:rgba(255,255,255,.15);--mono:'IBM Plex Mono',monospace;--display:'Space Grotesk',sans-serif;--body:'Manrope',sans-serif;--max:1480px}
-*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:85px}body{margin:0;background:var(--bg);color:var(--text);font-family:var(--body);overflow-x:hidden}body.light{--bg:#e8e8e8;--panel:#f4f4f4;--card:#fff;--text:#101010;--muted:#5c5c5c;--line:rgba(0,0,0,.17)}button,input,textarea,select{font:inherit}button,a{-webkit-tap-highlight-color:transparent}a{color:inherit;text-decoration:none}button{color:inherit;cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid #aaa;outline-offset:3px}.noise{position:fixed;inset:0;pointer-events:none;z-index:20;opacity:.025;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E")}.topline{height:3px;background:linear-gradient(90deg,transparent,#777,white,#333,transparent)}.container{width:min(var(--max),calc(100% - 56px));margin:auto}.mono{font:10px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}.nav-wrap{position:sticky;top:0;z-index:30;background:rgba(5,5,5,.88);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}body.light .nav-wrap{background:rgba(245,245,245,.9)}.nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{font:600 14px var(--display);letter-spacing:.19em;white-space:nowrap}.brand span{color:var(--muted);font-weight:300}.navlinks{display:flex;gap:26px;align-items:center}.navlinks a{font:10px var(--mono);letter-spacing:.12em;color:var(--muted)}.navlinks a:hover,.navlinks a.active{color:var(--text)}.navright{display:flex;gap:8px}.icon-btn,.menu-btn{width:40px;height:40px;border:1px solid var(--line);background:transparent;display:grid;place-items:center;border-radius:50%}.menu-btn{display:none}.hero{min-height:570px;position:relative;display:flex;align-items:center;overflow:hidden;border-bottom:1px solid var(--line)}.hero .container{position:relative;z-index:2;padding:90px 0 65px}.grid-bg{position:absolute;inset:0;opacity:.17;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:66px 66px;mask-image:linear-gradient(to bottom,black,transparent 90%)}.hero-art{position:absolute;width:min(70vw,850px);height:520px;right:-8%;top:4%;opacity:.82}.chrome-orb{position:absolute;width:70%;height:62%;right:5%;top:15%;border-radius:50%;transform:rotate(-28deg);background:radial-gradient(ellipse at 28% 20%,#f6f6f6 0,#737373 2%,#171717 9%,#020202 20%,#333 27%,#080808 36%,#bcbcbc 38%,#171717 40%,#030303 55%,#626262 63%,#050505 69%);filter:drop-shadow(0 40px 60px #000);box-shadow:inset 0 2px 8px #fff5,inset 0 -9px 15px #fff2}.chrome-orb:before{content:"";position:absolute;inset:13%;border:2px solid #888;border-radius:50%;box-shadow:0 0 2px #fff,inset 0 0 14px #fff3}.chrome-orb:after{content:"";position:absolute;inset:21% 5%;border-radius:50%;border-top:2px solid #eee9;border-bottom:1px solid #8886}.hero-copy{max-width:650px;position:relative;z-index:2}.eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:27px}.eyebrow:before{content:"";width:34px;height:1px;background:var(--muted)}h1,h2,h3,p{margin-top:0}h1{font:300 clamp(50px,8vw,105px)/.91 var(--display);letter-spacing:-.075em;margin-bottom:25px}h1 .outline{color:transparent;-webkit-text-stroke:1px var(--muted)}.hero-sub{font:11px/1.9 var(--mono);letter-spacing:.11em;color:var(--muted);max-width:350px;margin-bottom:28px}.actions{display:flex;flex-wrap:wrap;gap:10px}.btn{min-height:44px;padding:0 18px;border:1px solid var(--line);background:transparent;text-transform:uppercase;font:10px var(--mono);letter-spacing:.1em;display:inline-flex;align-items:center;justify-content:center;gap:14px;transition:.2s}.btn:hover{background:var(--text);color:var(--bg);border-color:var(--text)}.btn.primary{background:var(--text);color:var(--bg)}.hero-bottom{display:flex;justify-content:space-between;align-items:center;margin-top:65px;max-width:600px}.section{padding:82px 0;border-bottom:1px solid var(--line)}.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:30px}.section-index{margin-bottom:14px}.section h2{font:400 clamp(32px,5vw,57px)/1 var(--display);letter-spacing:-.055em;margin:0}.section h2 em{font-style:normal;color:var(--muted)}.section-desc{max-width:340px;color:var(--muted);font-size:12px;line-height:1.8;margin:0}.stats{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);margin-top:38px}.stat{padding:22px;border-right:1px solid var(--line)}.stat:last-child{border:0}.stat-num{font:300 34px var(--display);margin-bottom:8px}.stat-label{font:9px var(--mono);letter-spacing:.12em;color:var(--muted);text-transform:uppercase}.archive-controls{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:23px}.field,.select{height:43px;background:var(--panel);border:1px solid var(--line);color:var(--text);padding:0 12px}.search{flex:1;min-width:180px}.select{min-width:145px}.field::placeholder{color:#777}.gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}.member-card{position:relative;min-width:0;border:1px solid var(--line);background:#090909;overflow:hidden;transition:transform .3s,border-color .3s}.member-card:hover{transform:translateY(-4px);border-color:#aaa}.portrait{height:clamp(260px,28vw,390px);position:relative;overflow:hidden;background:radial-gradient(ellipse at 50% 26%,#333 0,#161616 30%,#050505 72%);display:flex;align-items:center;justify-content:center}.portrait:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#fff1,transparent 30%,#0008 70%,#000)}.portrait:after{content:"";position:absolute;inset:0;opacity:.23;background:repeating-linear-gradient(0deg,transparent 0 5px,#aaa 6px,transparent 7px);mix-blend-mode:overlay}.silhouette{position:absolute;width:53%;height:67%;top:11%;border-radius:46% 46% 12% 12%;background:linear-gradient(105deg,#080808,#4a4a4a 35%,#101010 67%,#777);filter:grayscale(1);box-shadow:0 0 45px #000;clip-path:polygon(25% 0,75% 0,100% 35%,87% 100%,13% 100%,0 35%)}.silhouette:before{content:"";position:absolute;top:8%;left:20%;width:60%;height:35%;border-radius:50% 50% 40% 40%;background:linear-gradient(90deg,#080808,#555 40%,#090909);box-shadow:0 0 12px #fff2}.silhouette:after{content:"";position:absolute;top:45%;left:-25%;width:150%;height:60%;background:linear-gradient(90deg,#050505,#444,#090909);clip-path:polygon(20% 0,80% 0,100% 100%,0 100%)}.portrait-img{position:absolute;width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.08)}.portrait-tag{position:absolute;z-index:2;top:12px;left:12px;font:8px var(--mono);letter-spacing:.12em;border:1px solid #ffffff44;padding:7px;color:#eee;background:#0008}.portrait-scan{position:absolute;z-index:2;left:0;right:0;height:1px;top:20%;background:#fff8;box-shadow:0 0 10px #fff;opacity:0}.member-card:hover .portrait-scan{top:80%;opacity:.8;transition:top .6s,opacity .3s}.card-info{padding:17px 16px 16px;background:linear-gradient(180deg,#111,#080808);color:#f5f5f5}.card-top{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:10px}.card-top .mono{font-size:8px}.card-name{font:500 22px var(--display);margin:0 0 7px}.card-handle{font:10px var(--mono);color:#aaa;overflow-wrap:anywhere;margin-bottom:13px}.ig-link{display:inline-flex;align-items:center;gap:7px;color:#ddd;border-bottom:1px solid #777;padding-bottom:3px;font:9px var(--mono);letter-spacing:.04em;transition:.2s}.ig-link:hover{color:white;border-color:white}.ig-link svg{width:13px;height:13px;flex-shrink:0}.card-bottom{display:flex;justify-content:space-between;align-items:center;border-top:1px solid #ffffff20;padding-top:12px;margin-top:14px;gap:8px}.role{font:8px var(--mono);letter-spacing:.08em;color:#aaa;text-transform:uppercase}.arrow-btn{border:1px solid #ffffff33;background:transparent;width:31px;height:31px;display:grid;place-items:center;flex-shrink:0}.arrow-btn:hover{background:#fff;color:#000}.empty{padding:50px 20px;border:1px dashed var(--line);text-align:center;color:var(--muted);grid-column:1/-1}.editorial{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}.editorial-visual{min-height:300px;position:relative;overflow:hidden;border:1px solid var(--line);background:radial-gradient(ellipse at 40% 40%,#363636,#090909 62%)}.editorial-visual:before{content:"";position:absolute;width:65%;height:45%;left:16%;top:27%;border-radius:50%;border:14px solid #202020;transform:rotate(-32deg);box-shadow:inset 0 2px 8px #fff7,0 1px 5px #fff5,0 0 0 2px #7775,0 20px 35px #000}.editorial-visual:after{content:"EC / 2026";position:absolute;bottom:18px;left:20px;font:10px var(--mono);letter-spacing:.16em;color:#aaa}.editorial-copy h3{font:300 clamp(30px,4vw,47px)/1.08 var(--display);letter-spacing:-.05em;margin-bottom:18px}.editorial-copy p{font-size:13px;line-height:1.9;color:var(--muted);max-width:470px}.principles{display:grid;grid-template-columns:repeat(5,1fr);border:1px solid var(--line)}.principle{padding:20px 16px;min-height:140px;border-right:1px solid var(--line)}.principle:last-child{border:0}.principle .num{font:10px var(--mono);color:var(--muted);margin-bottom:24px}.principle h3{font:500 15px var(--display);margin-bottom:8px}.principle p{font-size:10px;color:var(--muted);line-height:1.6;margin:0}.announcements{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.announcement{border:1px solid var(--line);padding:22px;background:var(--panel)}.announcement .date{margin-bottom:24px}.announcement h3{font:500 19px var(--display);margin-bottom:10px}.announcement p{font-size:12px;line-height:1.8;color:var(--muted);margin:0}.footer{padding:32px 0}.footer-row{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}.footer-links{display:flex;gap:18px;flex-wrap:wrap}.footer-links a{font:9px var(--mono);color:var(--muted)}.modal-backdrop{position:fixed;inset:0;z-index:60;background:#000c;backdrop-filter:blur(10px);display:none;align-items:center;justify-content:center;padding:18px}.modal-backdrop.open{display:flex}.modal{width:min(620px,100%);max-height:90vh;overflow:auto;border:1px solid #777;background:#0b0b0b;color:#f5f5f5;box-shadow:0 30px 100px #000}.modal-head{display:flex;align-items:center;justify-content:space-between;padding:18px 21px;border-bottom:1px solid #ffffff22}.modal-head h2{font:500 19px var(--display);margin:0}.modal-body{padding:22px}.profile-layout{display:grid;grid-template-columns:180px 1fr;gap:20px}.profile-portrait{min-height:230px;background:radial-gradient(ellipse at center,#555,#090909 70%);position:relative;overflow:hidden;border:1px solid #ffffff22}.profile-portrait .silhouette{width:65%;height:68%;top:15%}.profile-data h3{font:400 29px var(--display);margin:5px 0 8px}.data-block{padding:12px 0;border-top:1px solid #ffffff20}.data-block .mini-label{display:block;margin-bottom:7px}.data-block p{font-size:12px;line-height:1.7;color:#ccc;margin:0;overflow-wrap:anywhere}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}.form-group{display:flex;flex-direction:column;gap:7px}.form-group.full{grid-column:1/-1}.form-group label{font:9px var(--mono);letter-spacing:.1em;color:#aaa}.form-group input,.form-group textarea,.form-group select{width:100%;background:#141414;border:1px solid #444;color:#fff;padding:12px}.form-group textarea{min-height:90px;resize:vertical}.toast-area{position:fixed;right:18px;bottom:18px;z-index:100;display:grid;gap:8px}.toast{padding:13px 17px;background:#eee;color:#111;border:1px solid #fff;box-shadow:0 8px 30px #0008;font-size:12px;max-width:320px;animation:toastIn .25s ease}.admin-panel{border:1px solid var(--line);padding:22px;background:var(--panel)}.admin-panel h3{font:500 19px var(--display)}.admin-row{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line);font-size:12px}.admin-row:last-child{border:0}.small-btn{font:9px var(--mono);border:1px solid var(--line);background:transparent;padding:7px 9px;text-transform:uppercase}.small-btn:hover{background:var(--text);color:var(--bg)}.hidden{display:none!important}
-@media(max-width:1100px){.navlinks{gap:13px}.navlinks a{font-size:9px}.gallery{grid-template-columns:repeat(3,minmax(0,1fr))}.portrait{height:320px}.principles{grid-template-columns:repeat(3,1fr)}.principle:nth-child(3){border-right:0}.principle:nth-child(n+4){border-top:1px solid var(--line)}}
-@media(max-width:760px){.container{width:calc(100% - 32px)}.nav{height:62px}.brand{font-size:12px;letter-spacing:.13em}.menu-btn{display:grid}.navlinks{display:none;position:absolute;top:62px;left:0;right:0;padding:15px 20px;background:#080808;border-bottom:1px solid #444;flex-direction:column;align-items:stretch;gap:0}.navlinks.open{display:flex}.navlinks a{padding:14px 0;border-bottom:1px solid #ffffff15;font-size:10px}.hero{min-height:600px}.hero .container{padding:75px 0 40px}.hero-art{width:120vw;height:430px;right:-58%;top:4%;opacity:.48}h1{font-size:clamp(48px,14vw,76px)}.hero-bottom{margin-top:55px}.section{padding:65px 0}.section-head{align-items:flex-start;flex-direction:column;margin-bottom:26px}.stats{grid-template-columns:1fr 1fr}.stat{padding:16px;border-bottom:1px solid var(--line)}.stat:nth-child(2){border-right:0}.stat:nth-child(3),.stat:nth-child(4){border-bottom:0}.gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.portrait{height:clamp(220px,52vw,350px)}.card-info{padding:13px 11px}.card-name{font-size:18px}.card-handle{font-size:9px}.ig-link{font-size:8px}.archive-controls{display:grid;grid-template-columns:1fr 1fr}.search{grid-column:1/-1;width:100%}.select{min-width:0;width:100%}.editorial{grid-template-columns:1fr;gap:25px}.editorial-visual{min-height:250px}.principles{grid-template-columns:1fr 1fr}.principle{border-bottom:1px solid var(--line);min-height:125px}.principle:nth-child(2n){border-right:0}.principle:nth-child(3){border-right:1px solid var(--line)}.principle:last-child{border-bottom:0}.announcements{grid-template-columns:1fr}.profile-layout{grid-template-columns:1fr}.profile-portrait{min-height:240px}.profile-portrait .silhouette{width:42%}.form-grid{grid-template-columns:1fr}.form-group.full{grid-column:auto}.footer-row{align-items:flex-start;flex-direction:column}}
-@media(max-width:400px){.gallery{grid-template-columns:1fr}.portrait{height:330px}.stats .stat-num{font-size:27px}.card-info{padding:16px}.card-name{font-size:21px}}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+:root{--bg:#050505;--panel:#0b0b0b;--card:#101010;--raised:#171717;--text:#f5f5f5;--muted:#929292;--line:rgba(255,255,255,.14);--mono:'IBM Plex Mono',monospace;--display:'Space Grotesk',sans-serif;--body:'Manrope',sans-serif;--red:#ed151d}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:85px}body{margin:0;background:var(--bg);color:var(--text);font-family:var(--body);overflow-x:hidden}body.light{--bg:#e8e8e8;--panel:#f4f4f4;--card:#fff;--raised:#ddd;--text:#101010;--muted:#5d5d5d;--line:rgba(0,0,0,.18)}
+button,input,select,textarea{font:inherit}button,a{color:inherit;-webkit-tap-highlight-color:transparent}button{cursor:pointer}a{text-decoration:none}.mono{font:10px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}.topline{height:3px;background:linear-gradient(90deg,transparent,#777,#eee,#444,transparent)}.container{width:min(1480px,calc(100% - 56px));margin:auto}.nav-wrap{position:sticky;top:0;z-index:30;background:rgba(5,5,5,.88);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+</style>   
+    <div class="community-compose admin-panel">
+      <div class="form-group">
+        <label for="feedText">Buat posting</label>
+        <textarea id="feedText" placeholder="Tulis sesuatu untuk Circle..."></textarea>
+      </div>
+      <div class="actions" style="margin-top:12px">
+        <button class="btn primary" id="publishPost">PUBLISH POST ↗</button>
+        <span class="form-note">Posting hanya tersimpan di browser ini.</span>
+      </div>
+    </div>
 
-/* Uploaded ETHERNAL CIRCLE logo + local-only feature pack */
-.brand-mark{display:inline-flex;align-items:center;gap:10px}
-.brand-mini-logo{width:31px;height:25px;object-fit:contain;filter:drop-shadow(0 0 5px #ed101044)}
-.hero-logo-frame{width:min(410px,82vw);margin:0 0 25px;border:1px solid #ffffff25;background:#050505;padding:8px 12px;box-shadow:0 12px 40px #0008}
-.hero-logo-frame img{display:block;width:100%;height:auto;max-height:150px;object-fit:contain}
-.local-tools{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:28px 0 0}
-.local-tool{border:1px solid var(--line);background:var(--panel);padding:15px;text-align:left;min-height:95px;transition:.2s}
-.local-tool:hover{border-color:var(--silver);transform:translateY(-2px)}
-.local-tool strong{display:block;font:500 12px var(--display);margin:8px 0 5px}
-.local-tool span{font:9px var(--mono);color:var(--muted);line-height:1.6}
-.local-tool .tool-icon{font-size:17px;color:#ef2028}
-.local-notes{width:100%;min-height:95px;resize:vertical;background:var(--panel);border:1px solid var(--line);color:var(--text);padding:13px;font:12px/1.7 var(--body)}
-.tool-panel{border:1px solid var(--line);padding:20px;margin-top:14px;background:var(--panel)}
-.tool-panel-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px}
-.red-accent{--silver:#ff252d}
-body.red-accent .brand,body.red-accent .section h2 em{color:#ff252d}
-body.compact-cards .portrait{height:230px}
-body.compact-cards .card-info{padding:12px}
-body.focus-mode .noise,body.focus-mode .grid-bg{display:none}
-.local-tool-row{display:flex;flex-wrap:wrap;gap:8px}
-.local-tool-row .btn{min-height:38px;padding:0 12px;font-size:9px}
-.visit-count{font:10px var(--mono);color:var(--muted)}
-#backTop{position:fixed;right:18px;bottom:18px;z-index:40;width:43px;height:43px;border:1px solid var(--line);background:var(--panel);color:var(--text);display:none}
-#backTop.visible{display:grid;place-items:center}
-@media(max-width:900px){.local-tools{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:640px){.hero-logo-frame{margin-bottom:20px}.hero-logo-frame img{max-height:105px}.local-tools{grid-template-columns:repeat(2,minmax(0,1fr))}.local-tool{padding:12px;min-height:90px}}
-@media print{.nav-wrap,.topline,.noise,.local-tools,#backTop,.actions,.hero-bottom,footer,.archive-controls{display:none!important}body{background:white;color:black}.member-card{break-inside:avoid}}
+    <div id="feedList" class="song-list" style="margin-top:18px"></div>
 
-</style>
-</head>
-<body>
-<div class="noise"></div><div class="topline"></div>
-<header class="nav-wrap"><nav class="nav container">
-<a href="#home" class="brand brand-mark"><img class="brand-mini-logo" src="data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wAARCAPwBgADASIAAhEBAxEB/8QAHgAAAwACAwEBAQAAAAAAAAAAAAECBwgDBQYECQr/xABeEAABAwIEBQEFBQYCBQgGARUBAAIRAwQFBiExBxJBUWFxCBMigZEUMqGxwQkVI0JS0WJyFiQzQ+ElU2OCkqKy8CZzdLPC8TREVoOjtBcYNlRVddLiJzVFZGWEhZP/xAAdAQEAAgIDAQEAAAAAAAAAAAAAAQcGCAIEBQkD/8QAShEAAgECAwQGCAMGBAYBBAIDAAECAwQFBhEhMUFRBxIiYXGBExQykaGxwdFCUuEVI2JygvAzkrLCFiQ0U6LxQzZjc9ImRIOz4v/aAAwDAQACEQMRAD8A/M0nWEE8pUk8pk7KhqCUAEy1clNvMN1xH7vZU13KNT9FALMg6apRzE9SpFTQqQ6CgKI0SBIOiOclIEygHoJPVIjmTI3RsddUBIEGQjmHzSJ1MIIhAVzEgypEgpgjsmdPRAJzhKYjREeUigKESm50eqQdCC7SUBESZKY8pggiBokGz6oBHXRMAdSnHzCIAHdAD42UxCoqSfogJIlAQRqgaIC5QTA2SB1QWz5QEl2qoQgtgKmjRAOFDhBVkwFxzqiAEyNkxA0RzdgmgHt5SJAJRMpEz6qQOQnHhS0GY6qth5UATpRJQdDqiRCAR3RCeyIkSgFABRMIKNiUAxr1RBQNET4QCnsmD2QUt0BQOmqSNhopJ6oBkpbpgyUGdUBDj3S66K90uWDogEZmU2nqSgDdGyAYI9EE/NA9EEIBggJklSUubygK5kg7Xulv1SieqAowZSLuiJRKABsgeUwdEbhABGuqNuqeyWkdlID0TBQNkSgHz
+    <div class="section-head" style="margin-top:48px">
+      <div>
+        <div class="mono section-index">08 / CIRCLE POLL</div>
+        <h2>Community <em>Vote</em></h2>
+      </div>
+      <p class="section-desc">
+        Voting demo lokal. Pilihan dan hasil tidak disinkronkan ke perangkat lain.
+      </p>
+    </div>
+
+    <div class="admin-panel">
+      <div class="mini-label">POLL / 001</div>
+      <h3 style="margin:12px 0">Aktivitas Circle berikutnya?</h3>
+
+      <div id="pollOptions" class="song-list">
+        <label class="song">
+          <input type="radio" name="circlePoll" value="Gaming night">
+          Gaming night
+        </label>
+        <label class="song">
+          <input type="radio" name="circlePoll" value="Movie night">
+          Movie night
+        </label>
+        <label class="song">
+          <input type="radio" name="circlePoll" value="Community meetup">
+          Community meetup
+        </label>
+      </div>
+
+      <div class="actions" style="margin-top:14px">
+        <button class="btn" id="votePoll">SUBMIT VOTE ↗</button>
+        <span class="form-note" id="pollResult">
+          Belum ada suara pada browser ini.
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="events">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="mono section-index">09 / EVENTS</div>
+        <h2>Circle <em>Calendar</em></h2>
+      </div>
+      <p class="section-desc">
+        Buat acara dan tandai keikutsertaan secara lokal.
+      </p>
+    </div>
+
+    <div class="admin-panel">
+      <form id="eventForm" class="form-grid">
+        <div class="form-group">
+          <label for="eventTitle">Nama acara</label>
+          <input
+            id="eventTitle"
+            required
+            maxlength="80"
+            placeholder="Contoh: Circle Night"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="eventDate">Tanggal acara</label>
+          <input id="eventDate" type="date" required>
+        </div>
+
+        <div class="form-group full">
+          <label for="eventDesc">Deskripsi</label>
+          <textarea id="eventDesc" placeholder="Detail acara..."></textarea>
+        </div>
+
+        <div class="form-group full">
+          <button class="btn primary" type="submit">ADD EVENT +</button>
+        </div>
+      </form>
+    </div>
+
+    <div
+      id="eventList"
+      class="announcements"
+      style="margin-top:18px"
+    ></div>
+  </div>
+</section>
+<section class="section" id="achievements">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="mono section-index">10 / MEMBER PROGRESSION</div>
+        <h2>Rank &amp; <em>Achievements</em></h2>
+      </div>
+      <p class="section-desc">
+        Sistem progres contoh untuk gamifikasi komunitas lokal.
+      </p>
+    </div>
+
+    <div class="stats" id="rankStats">
+      <div class="stat">
+        <div class="stat-num" id="xpTotal">120</div>
+        <div class="stat-label">Local XP</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" id="rankLevel">02</div>
+        <div class="stat-label">Level</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" id="achievementCount">03</div>
+        <div class="stat-label">Achievements</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" id="followingCount">00</div>
+        <div class="stat-label">Following</div>
+      </div>
+    </div>
+
+    <div class="principles" style="margin-top:18px">
+      <div class="principle">
+        <div class="num">ACH / 01</div>
+        <h3>First Contact</h3>
+        <p>Buka profil anggota pertama.</p>
+      </div>
+      <div class="principle">
+        <div class="num">ACH / 02</div>
+        <h3>Archivist</h3>
+        <p>Simpan anggota ke favorit.</p>
+      </div>
+      <div class="principle">
+        <div class="num">ACH / 03</div>
+        <h3>Contributor</h3>
+        <p>Buat posting komunitas.</p>
+      </div>
+      <div class="principle">
+        <div class="num">ACH / 04</div>
+        <h3>Voter</h3>
+        <p>Ikut voting komunitas.</p>
+      </div>
+      <div class="principle">
+        <div class="num">ACH / 05</div>
+        <h3>Gathering</h3>
+        <p>RSVP acara komunitas.</p>
+      </div>
+    </div>
+  </div>
+</section><section class="section" id="achievements">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="mono section-index">10 / MEMBER PROGRESSION</div>
+        <h2>Rank &amp; <em>Achievements</em></h2>
+      </div>
+      <p class="section-desc">
+        Sistem progres contoh untuk gamifikasi komunitas lokal.
+      </p>
+    </div>
+
+    <div class="stats" id="rankStats">
+      <div class="stat">
+        <div class="stat-num" id="xpTotal">120</div>
+        <div class="stat-label">Local XP</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" id="rankLevel">02</div>
+        <div class="stat-label">Level</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" id="achievementCount">03</div>
+        <div class="stat-label">Achievements</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" id="followingCount">00</div>
+        <div class="stat-label">Following</div>
+      </div>
+    </div>
+
+    <div class="principles" style="margin-top:18px">
+      <div class="principle">
+        <div class="num">ACH / 01</div>
+        <h3>First Contact</h3>
+        <p>Buka profil anggota pertama.</p>
+      </div>
+      <div class="principle">
+        <div class="num">ACH / 02</div>
+        <h3>Archivist</h3>
+        <p>Simpan anggota ke favorit.</p>
+      </div>
+      <div class="principle">
+        <div class="num">ACH / 03</div>
+        <h3>Contributor</h3>
+        <p>Buat posting komunitas.</p>
+      </div>
+      <div class="principle">
+        <div class="num">ACH / 04</div>
+        <h3>Voter</h3>
+        <p>Ikut voting komunitas.</p>
+      </div>
+      <div class="principle">
+        <div class="num">ACH / 05</div>
+        <h3>Gathering</h3>
+        <p>RSVP acara komunitas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="membercard">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="mono section-index">11 / DIGITAL ID</div>
+        <h2>Digital <em>Member Card</em></h2>
+      </div>
+      <p class="section-desc">
+        Kartu identitas dekoratif yang dapat dicetak.
+        Bukan bukti verifikasi online.
+      </p>
+    </div>
+
+    <div class="member-id-card" id="digitalCard">
+      <div class="mono">ETHERNAL CIRCLE / MEMBER ACCESS</div>
+      <div class="id-card-brand">
+        ETHERNAL<br>
+        <span>CIRCLE</span>
+      </div>
+      <div class="id-card-bottom">
+        <div>
+          <div class="mini-label">MEMBER NAME</div>
+          <strong id="idCardName">CIRCLE MEMBER</strong>
+        </div>
+        <div>
+          <div class="mini-label">ISSUED</div>
+          <strong>EC / 2026</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="actions" style="margin-top:14px">
+      <button class="btn" id="printCard">PRINT / SAVE PDF ↗</button>
+      <button class="btn" id="downloadCard">DOWNLOAD CARD DATA ↓</button>
+    </div>
+  </div>
+</section> 
+<section class="section" id="help">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="mono section-index">12 / INFORMATION</div>
+        <h2>FAQ &amp; <em>Policy</em></h2>
+      </div>
+      <p class="section-desc">
+        Informasi penggunaan dan batasan penyimpanan lokal.
+      </p>
+    </div>
+
+    <div class="announcements">
+      <article class="announcement">
+        <div class="mono date">FAQ / 001</div>
+        <h3>Apakah memakai backend?</h3>
+        <p>
+          Tidak. Fitur interaktif berjalan di browser.
+          Tidak ada database server atau sinkronisasi lintas perangkat.
+        </p>
+      </article>
+
+      <article class="announcement">
+        <div class="mono date">FAQ / 002</div>
+        <h3>Di mana data tersimpan?</h3>
+        <p>
+          Data disimpan di localStorage browser. Menghapus data situs
+          atau mengganti browser dapat menghapus atau memisahkan data.
+        </p>
+      </article>
+
+      <article class="announcement">
+        <div class="mono date">POLICY / 001</div>
+        <h3>Privasi &amp; keamanan</h3>
+        <p>
+          Jangan masukkan informasi rahasia. Panel lokal bukan sistem
+          autentikasi dan data bisa diubah oleh pengguna perangkat.
+        </p>
+      </article>
+    </div>
+
+    <div class="actions" style="margin-top:18px">
+      <button class="btn" id="simulate404">PREVIEW 404 PAGE ↗</button>
+      <button class="btn" id="resetLocal">RESET LOCAL DATA ↻</button>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-row">
+    <a class="brand" href="#home">ETHERNAL <span>CIRCLE</span></a>
+    <span class="mono">© 2026 — PRIVATE COMMUNITY ARCHIVE</span>
+    <div class="mono">SINGLE FILE / NO BACKEND</div>
+  </div>
+</footer>
+
+<div class="modalback" id="modalBack" role="dialog" aria-modal="true">
+  <div class="modal">
+    <div class="modalhead">
+      <h2 id="modalTitle">Member profile</h2>
+      <button class="iconbtn" id="closeModal" aria-label="Tutup">×</button>
+    </div>
+    <div class="modalbody" id="modalBody"></div>
+  </div>
+</div>
+
+<div class="toastarea" id="toastArea" aria-live="polite"></div>
+
+<script>
+const seedMembers = [
+  {
+    id: "EC-001",
+    name: "ATHENA",
+    handle: "@vel.sixxzh",
+    role: "Council",
+    bio: "Biography not added.",
+    ig: "vel.sixxzh",
+    level: "040%",
+    tag: "CLASSIFIED"
+  },
+  {
+    id: "EC-002",
+    name: "COBRA",
+    handle: "@r.rifff________",
+    role: "Council",
+    bio: "Biography not added.",
+    ig: "r.rifff________",
+    level: "040%",
+    tag: "CLASSIFIED"
+  },
+  {
+    id: "EC-003",
+    name: "D’KING",
+    handle: "@prajurit_ke_5",
+    role: "Council",
+    bio: "Biography not added.",
+    ig: "prajurit_ke_5",
+    level: "040%",
+    tag: "CLASSIFIED"
+  },
+  {
+    id: "EC-004",
+    name: "ARES",
+    handle: "@abyu_zhd",
+    role: "Donatur",
+    bio: "Biography not added.",
+    ig: "abyu_zhd",
+    level: "040%",
+    tag: "CLASSIFIED"
+  },
+  {
+    id: "EC-005",
+    name: "OXYGEN",
+    handle: "@faris.m417",
+    role: "Administrator",
+    bio: "Biography not added.",
+    ig: "faris.m417",
+    level: "040%",
+    tag: "CLASSIFIED"
+  },
+  {
+    id: "EC-006",
+    name: "CASPER",
+    handle: "@muhammad_bukhari30",
+    role: "Administrator",
+    bio: "Biography not added.",
+    ig: "muhammad_bukhari30",
+    level: "040%",
+    tag: "CLASSIFIED"
+  },
+  {
+    id: "EC-007",
+    name: "LUCIAN",
+    handle: "@muara.ww",
+    role: "Administrator",
+    bio: "Biography not added.",
+    ig: "muara.ww",
+    level: "040%",
+    tag: "CLASSIFIED"
+  }
+];  let xp = read("xp", 120);
+  const bump = n => { xp += n; save("xp",xp); updateRanks(); };
+
+  function updateRanks(){
+    if($("#xpTotal"))$("#xpTotal").textContent=xp;
+    if($("#rankLevel"))$("#rankLevel").textContent=String(Math.floor(xp/100)+1).padStart(2,"0");
+    if($("#followingCount"))$("#followingCount").textContent=String(follows.length).padStart(2,"0");
+    if($("#achievementCount"))$("#achievementCount").textContent=String(3+(posts.length>0)+(Object.keys(votes).length>0)+(events.some(e=>e.rsvp))).padStart(2,"0");
+  }
+
+  function renderPosts(){
+    const host=$("#feedList");
+    if(!host)return;
+    host.innerHTML="";
+
+    if(!posts.length){
+      host.innerHTML='<div class="empty">Belum ada posting. Jadilah yang pertama mengisi Circle.</div>';
+      return;
+    }
+
+    posts.slice().reverse().forEach(post=>{
+      const box=document.createElement("article");
+      box.className="feed-post";
+      const liked=likes.includes(post.id);
+      const cm=comments[post.id]||[];
+
+      box.innerHTML=`
+        <div class="feed-post-head">
+          <span class="mono">EC FEED / ${esc(post.date)}</span>
+          <span class="mono">LOCAL POST</span>
+        </div>
+        <p>${esc(post.text)}</p>
+        <div class="feed-actions">
+          <button data-like="${esc(post.id)}">${liked?"♥ LIKED":"♡ LIKE"} (${post.likes||0})</button>
+          <button data-follow="${esc(post.author||"Circle Member")}">＋ FOLLOW AUTHOR</button>
+          <button data-bookmark="${esc(post.id)}">▣ BOOKMARK</button>
+          <button data-delete-post="${esc(post.id)}">DELETE</button>
+        </div>
+        <div class="feed-comments">
+          <div class="mini-label">COMMENTS (${cm.length})</div>
+          ${cm.map(c=>`<p style="margin:8px 0;font-size:11px">${esc(c)}</p>`).join("")}
+          <form data-comment="${esc(post.id)}">
+            <input name="comment" placeholder="Tulis komentar..." maxlength="240" required>
+            <button class="small-btn">SEND</button>
+          </form>
+        </div>`;
+      host.append(box);
+    });
+  }
+
+  $("#publishPost")?.addEventListener("click",()=>{
+    const text=$("#feedText")?.value.trim();
+    if(!text)return toast("Tulis posting terlebih dahulu.");
+
+    posts.push({
+      id:Date.now().toString(36),
+      text,
+      date:new Date().toLocaleDateString("id-ID"),
+      author:"Circle Member",
+      likes:0
+    });
+
+    save("posts",posts);
+    $("#feedText").value="";
+    renderPosts();
+    bump(10);
+    toast("Posting disimpan di browser.");
+  });
+
+  $("#feedList")?.addEventListener("click",e=>{
+    const b=e.target.closest("button");
+    if(!b)return;
+
+    if(b.dataset.like){
+      const p=posts.find(x=>x.id===b.dataset.like);
+      if(!p)return;
+
+      if(likes.includes(p.id)){
+        likes=likes.filter(x=>x!==p.id);
+        p.likes=Math.max(0,(p.likes||0)-1);
+      }else{
+        likes.push(p.id);
+        p.likes=(p.likes||0)+1;
+      }
+
+      save("likes",likes);
+      save("posts",posts);
+      renderPosts();
+    }
+
+    if(b.dataset.follow){
+      if(!follows.includes(b.dataset.follow)){
+        follows.push(b.dataset.follow);
+        save("follows",follows);
+        updateRanks();
+        toast("Mengikuti "+b.dataset.follow);
+      }else{
+        toast("Sudah mengikuti akun ini.");
+      }
+    }
+
+    if(b.dataset.bookmark){
+      let marks=read("bookmarks",[]);
+      if(!marks.includes(b.dataset.bookmark)){
+        marks.push(b.dataset.bookmark);
+      }else{
+        marks=marks.filter(x=>x!==b.dataset.bookmark);
+      }
+
+      save("bookmarks",marks);
+      toast("Bookmark diperbarui.");
+    }
+
+    if(b.dataset.deletePost){
+      posts=posts.filter(x=>x.id!==b.dataset.deletePost);
+      save("posts",posts);
+      renderPosts();
+      toast("Posting dihapus.");
+    }
+  });
+
+  $("#feedList")?.addEventListener("submit",e=>{
+    const form=e.target.closest("form[data-comment]");
+    if(!form)return;
+    e.preventDefault();
+
+    const id=form.dataset.comment;
+    const val=new FormData(form).get("comment")?.toString().trim();
+    if(!val)return;
+
+    (comments[id] ||= []).push(val);
+    save("comments",comments);
+    renderPosts();
+    toast("Komentar disimpan.");
+  });
+
+  $("#votePoll")?.addEventListener("click",()=>{
+    const choice=$('input[name="circlePoll"]:checked')?.value;
+    if(!choice)return toast("Pilih opsi voting.");
+
+    votes.circlePoll=choice;
+    save("votes",votes);
+
+    if($("#pollResult")){
+      $("#pollResult").textContent="Pilihan lokal tersimpan: "+choice;
+    }
+
+    bump(5);
+    toast("Vote tersimpan di browser.");
+  });
+
+  function renderEvents(){
+    const host=$("#eventList");
+    if(!host)return;
+
+    host.innerHTML="";
+
+    if(!events.length){
+      host.innerHTML='<div class="empty">Belum ada acara. Tambahkan acara pertama.</div>';
+      return;
+    }
+
+    events.slice().sort((a,b)=>a.date.localeCompare(b.date)).forEach(ev=>{
+      const el=document.createElement("article");
+      el.className="announcement";
+
+      el.innerHTML=`
+        <div class="mono date">${esc(ev.date)}</div>
+        <h3>${esc(ev.title)}</h3>
+        <p>${esc(ev.desc||"Tidak ada deskripsi.")}</p>
+        <div class="actions" style="margin-top:16px">
+          <button class="btn" data-rsvp="${esc(ev.id)}">
+            ${ev.rsvp?"RSVP CONFIRMED":"RSVP / JOIN"}
+          </button>
+          <button class="small-btn" data-delete-event="${esc(ev.id)}">DELETE</button>
+        </div>`;
+
+      host.append(el);
+    });
+  }
+
+  $("#eventForm")?.addEventListener("submit",e=>{
+    e.preventDefault();
+
+    events.push({
+      id:Date.now().toString(36),
+      title:$("#eventTitle").value.trim(),
+      date:$("#eventDate").value,
+      desc:$("#eventDesc").value.trim(),
+      rsvp:false
+    });
+
+    save("events",events);
+    e.target.reset();
+    renderEvents();
+    toast("Acara ditambahkan.");
+  });
+
+  $("#eventList")?.addEventListener("click",e=>{
+    const b=e.target.closest("button");
+    if(!b)return;
+
+    if(b.dataset.rsvp){
+      const ev=events.find(x=>x.id===b.dataset.rsvp);
+
+      if(ev){
+        ev.rsvp=!ev.rsvp;
+        save("events",events);
+        renderEvents();
+
+        if(ev.rsvp)bump(5);
+        toast(ev.rsvp?"RSVP tersimpan.":"RSVP dibatalkan.");
+      }
+    }
+
+    if(b.dataset.deleteEvent){
+      events=events.filter(x=>x.id!==b.dataset.deleteEvent);
+      save("events",events);
+      renderEvents();
+    }
+  });
+
+  $("#printCard")?.addEventListener("click",()=>window.print());
+
+  $("#downloadCard")?.addEventListener("click",()=>{
+    const data={
+      community:"ETHERNAL CIRCLE",
+      member:$("#idCardName")?.textContent||"CIRCLE MEMBER",
+      issued:"EC / 2026",
+      note:"Decorative local ID; not online verified."
+    };
+
+    const a=document.createElement("a");
+    a.href=URL.createObjectURL(
+      new Blob([JSON.stringify(data,null,2)],{
+        type:"application/json"
+      })
+    );
+    a.download="ethernal-member-card.json";
+    a.click();
+    URL.revokeObjectURL(a.href);
+  });
+
+  $("#simulate404")?.addEventListener("click",()=>{
+    const overlay=document.createElement("div");
+    overlay.className="modal-backdrop open";
+
+    overlay.innerHTML=`
+      <div class="modal">
+        <div class="modal-head">
+          <h2>404 / ARCHIVE NOT FOUND</h2>
+          <button class="icon-btn" aria-label="Close">×</button>
+        </div>
+        <div class="modal-body">
+          <div class="mono">ERROR / 404</div>
+          <h3 style="font:300 40px var(--display);margin:16px 0">
+            Lost in the Circle.
+          </h3>
+          <p style="color:#aaa;line-height:1.8">
+            Halaman yang kamu cari tidak tersedia dalam arsip demo ini.
+          </p>
+          <button class="btn primary">RETURN TO HOME ↗</button>
+        </div>
+      </div>`;
+
+    document.body.append(overlay);
+
+    overlay.addEventListener("click",e=>{
+      if(e.target===overlay||e.target.closest("button")){
+        overlay.remove();
+        if(e.target.closest(".btn"))location.hash="#home";
+      }
+    });
+  });
+
+  $("#resetLocal")?.addEventListener("click",()=>{
+    if(confirm("Hapus data fitur lokal tambahan (posting, event, vote, XP, follow, komentar)?")){
+      ["posts","events","follows","comments","likes","votes","xp","bookmarks"]
+        .forEach(k=>localStorage.removeItem("ec_v2_"+k));
+
+      posts=[];
+      events=[];
+      follows=[];
+      comments={};
+      likes=[];
+      votes={};
+      xp=120;
+
+      renderPosts();
+      renderEvents();
+      updateRanks();
+      toast("Data tambahan lokal direset.");
+    }
+  });
+
+  // Sinkronisasi nama kartu dengan anggota pertama.
+  const firstName=$$(".member-card .card-name")[0]?.textContent?.trim();
+  if(firstName&&$("#idCardName")){
+    $("#idCardName").textContent=firstName;
+  }
+
+  // Jalankan fitur lokal saat halaman dibuka.
+  renderPosts();
+  renderEvents();
+  updateRanks();
+})();
+</script>
+</body></html>
