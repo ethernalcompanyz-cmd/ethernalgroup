@@ -9,7 +9,7 @@
 :root{--bg:#050505;--panel:#0b0b0b;--card:#101010;--raised:#171717;--text:#f5f5f5;--muted:#929292;--line:rgba(255,255,255,.14);--mono:'IBM Plex Mono',monospace;--display:'Space Grotesk',sans-serif;--body:'Manrope',sans-serif;--red:#ed151d}
 *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:85px}body{margin:0;background:var(--bg);color:var(--text);font-family:var(--body);overflow-x:hidden}body.light{--bg:#e8e8e8;--panel:#f4f4f4;--card:#fff;--raised:#ddd;--text:#101010;--muted:#5d5d5d;--line:rgba(0,0,0,.18)}
 button,input,select,textarea{font:inherit}button,a{color:inherit;-webkit-tap-highlight-color:transparent}button{cursor:pointer}a{text-decoration:none}.mono{font:10px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}.topline{height:3px;background:linear-gradient(90deg,transparent,#777,#eee,#444,transparent)}.container{width:min(1480px,calc(100% - 56px));margin:auto}.nav-wrap{position:sticky;top:0;z-index:30;background:rgba(5,5,5,.88);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
-</style>   
+</style>
     <div class="community-compose admin-panel">
       <div class="form-group">
         <label for="feedText">Buat posting</label>
@@ -108,66 +108,6 @@ button,input,select,textarea{font:inherit}button,a{color:inherit;-webkit-tap-hig
       style="margin-top:18px"
     ></div>
   </div>
-</section>
-<section class="section" id="achievements">
-  <div class="container">
-    <div class="section-head">
-      <div>
-        <div class="mono section-index">10 / MEMBER PROGRESSION</div>
-        <h2>Rank &amp; <em>Achievements</em></h2>
-      </div>
-      <p class="section-desc">
-        Sistem progres contoh untuk gamifikasi komunitas lokal.
-      </p>
-    </div>
-
-    <div class="stats" id="rankStats">
-      <div class="stat">
-        <div class="stat-num" id="xpTotal">120</div>
-        <div class="stat-label">Local XP</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num" id="rankLevel">02</div>
-        <div class="stat-label">Level</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num" id="achievementCount">03</div>
-        <div class="stat-label">Achievements</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num" id="followingCount">00</div>
-        <div class="stat-label">Following</div>
-      </div>
-    </div>
-
-    <div class="principles" style="margin-top:18px">
-      <div class="principle">
-        <div class="num">ACH / 01</div>
-        <h3>First Contact</h3>
-        <p>Buka profil anggota pertama.</p>
-      </div>
-      <div class="principle">
-        <div class="num">ACH / 02</div>
-        <h3>Archivist</h3>
-        <p>Simpan anggota ke favorit.</p>
-      </div>
-      <div class="principle">
-        <div class="num">ACH / 03</div>
-        <h3>Contributor</h3>
-        <p>Buat posting komunitas.</p>
-      </div>
-      <div class="principle">
-        <div class="num">ACH / 04</div>
-        <h3>Voter</h3>
-        <p>Ikut voting komunitas.</p>
-      </div>
-      <div class="principle">
-        <div class="num">ACH / 05</div>
-        <h3>Gathering</h3>
-        <p>RSVP acara komunitas.</p>
-      </div>
-    </div>
-  </div>
 </section><section class="section" id="achievements">
   <div class="container">
     <div class="section-head">
@@ -265,7 +205,8 @@ button,input,select,textarea{font:inherit}button,a{color:inherit;-webkit-tap-hig
       <button class="btn" id="downloadCard">DOWNLOAD CARD DATA ↓</button>
     </div>
   </div>
-</section> 
+</section>
+
 <section class="section" id="help">
   <div class="container">
     <div class="section-head">
@@ -405,8 +346,9 @@ const seedMembers = [
     ig: "muara.ww",
     level: "040%",
     tag: "CLASSIFIED"
-  }
-];  let xp = read("xp", 120);
+  },
+  ];
+      let xp = read("xp", 120);
   const bump = n => { xp += n; save("xp",xp); updateRanks(); };
 
   function updateRanks(){
@@ -713,4 +655,5 @@ const seedMembers = [
   updateRanks();
 })();
 </script>
+
 </body></html>
